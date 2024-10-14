@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:52:12 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/03 19:25:28 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/13 20:55:29 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat(void) {
 Cat::~Cat(void) {}
 
 Cat::Cat(const Cat &copy) : Animal(copy) {
-	*this = copy;
+	this->_type = copy._type;
 }
 
 Cat& Cat::operator=(const Cat &assign) {
