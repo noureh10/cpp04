@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:10:45 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/13 21:11:52 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:37:10 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ int main(void) {
 	}
 	{
 		Dog *test = new Dog();
-		Dog *toto = new Dog(test);
 	}
 }
