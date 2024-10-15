@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:03:02 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 13:22:04 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:18:24 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@
 class MateriaSource: public IMateriaSource {
 	private:
 		AMateria *_inventory[ARRAY_SIZE];
+		void outputMessage(std::string message);
 	public:
 		MateriaSource(void);
-		MateriaSource(MateriaSource const &copy);
+		MateriaSource(const MateriaSource &copy);
 		~MateriaSource(void);
-		MateriaSource& operator=(MateriaSource const &assign);
+		MateriaSource& operator=(const MateriaSource &assign);
 		void learnMateria(AMateria*);
-		AMateria* createMateria(std::string const &type);
+		AMateria* createMateria(const std::string &type);
 };
 
 #endif
