@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:52:25 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 13:01:52 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:56:41 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,6 @@ AMateria::AMateria(const AMateria &copy) {
 }
 
 AMateria::~AMateria() {}
-
-AMateria &AMateria::operator=(const AMateria &assign) {
-	if(this != &assign)
-		this->_type = assign.getType();
-	return (*this);
-}
 
 std::string const& AMateria::getType(void) const {
 	return (this->_type);

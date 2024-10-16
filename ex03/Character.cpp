@@ -6,11 +6,12 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:19:59 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 18:35:19 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:55:00 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include <ostream>
 
 Character::Character(void) {
 	Character(DEFAULT_NAME);
@@ -42,6 +43,10 @@ Character::~Character() {
 	this->deleteInvertory();
 }
 
+void Character::outputMessage(std::string message) {
+	std::cout << message << std::endl;
+}
+
 Character& Character::operator=(const Character &assign) {
 	if (this != &assign)
 	{
@@ -64,9 +69,9 @@ std::string const & Character::getName() const {
 
 void Character::equip(AMateria *m) {
 	for (int i = 0; i < ARRAY_SIZE; i++) {
-		if (this->_inventory[i]) {
+		if (!this->_inventory[i]) {
 			this->_inventory[i] = m;
-			this->outputMessage("Material equipped !");
+			outputMessage("Material equipped !");
 			return ;
 		}
 	}
@@ -76,13 +81,13 @@ void Character::unequip(int idx) {
 	if (idx >= 0 && idx < ARRAY_SIZE)
 	{
 		this->_inventory[idx] = NULL;
-		this->outputMessage("Material unnequipped");
+		outputMessage("Material unnequipped");
 	}
 }
 
 void Character::use(int idx, ICharacter &target) {
-	if ((idx >= 0 && idx < ARRAY_SIZE) && this->_inventory[idx])
+	if ((idx >= 0 || idx < ARRAY_SIZE))
 		this->_inventory[idx]->use(target);
-	else
-		this->outputMessage("Cannot use the void...");
+	// else
+		// outputMessage("Cannot use the void...");
 }

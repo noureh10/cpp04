@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:22:56 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 18:51:11 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:18:23 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &assign) {
 				this->_inventory[i] = NULL;
 		}
 	}
+	return (*this);
 }
 
 void MateriaSource::outputMessage(std::string message) {

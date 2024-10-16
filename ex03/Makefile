@@ -6,16 +6,16 @@
 #    By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/03 18:10:38 by nechaara          #+#    #+#              #
-#    Updated: 2024/10/04 15:25:37 by nechaara         ###   ########.fr        #
+#    Updated: 2024/10/16 18:55:19 by nechaara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = poly
 
-SRCS = Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp main.cpp
+SRCS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 OBJ_DIR = objects
-FLAGS = -std=c++98 -Wall -Wextra -Werror -g3
+FLAGS = -std=c++98 -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(OBJS)

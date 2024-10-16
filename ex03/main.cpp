@@ -6,16 +6,16 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:59:27 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 19:13:36 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:22:14 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "AMateria.hpp"
-// #include "Ice.hpp"
-// #include "Cure.hpp"
-// #include "IMateriaSource.hpp"
-// #include "MateriaSource.hpp"
-// #include "Character.hpp"
+#include "AMateria.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int main()
 {

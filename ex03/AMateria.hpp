@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 22:03:54 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 19:17:48 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:17:41 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria {
 	protected:
