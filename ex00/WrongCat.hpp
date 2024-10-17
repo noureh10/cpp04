@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 19:48:32 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 13:06:04 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:38:18 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include "WrongAnimal.hpp"
 
-#define CAT_NOISE "Wrong Meow"
+#define CAT_NOISE_W "Wrong Meow"
 
 class WrongCat: public WrongAnimal {
 	public:
