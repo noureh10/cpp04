@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:52:12 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/13 20:49:12 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/17 20:49:09 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,8 @@ void Cat::makeSound() const {
 Brain& Cat::getBrain(void) const {
 	return (*this->brain);
 }
+
+Brain& Cat::getBrain(void) const {
+	return (*this->brain);
+}
+

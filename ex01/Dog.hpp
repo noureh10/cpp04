@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:39:23 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 13:36:12 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/17 16:09:11 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Dog: public Animal {
 		Dog& operator=(const Dog &assign);
 		void makeSound(void) const;
 		Brain& getBrain(void) const;
-		bool isEqual(const Dog &obj)
+		bool isEqual(const Dog &obj);
 };
 
 #endif

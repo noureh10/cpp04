@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:43:40 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/14 13:36:20 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/17 20:22:44 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ Dog::~Dog(void) {
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy) {
-	this->_type = copy._type;
-	this->brain = new Brain(*copy.brain);
+	*this = copy;
 }
 
 Dog& Dog::operator=(const Dog &assign) {

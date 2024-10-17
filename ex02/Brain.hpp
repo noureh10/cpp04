@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:53:57 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/04 14:55:08 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/17 20:44:00 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 #define BRAIN_HPP
 
 #include <iostream>
+#define NUMBER_OF_IDEAS 100
 
 class Brain
 {
 	private:
-		std::string ideas[100];
+		std::string ideas[NUMBER_OF_IDEAS];
 	public:
 		Brain();
 		Brain(const Brain &other);
 		~Brain();
 		Brain &operator=(const Brain &other);
-		void setIdea(std::string idea, int index);
-		std::string getIdea(int index) const;	
+		void setIdea(const std::string idea, unsigned int index);
+		const std::string getIdea(unsigned int index) const;	
 };
 
 #endif
