@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:19:59 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/16 18:55:00 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/18 19:07:35 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ std::string const & Character::getName() const {
 }
 
 void Character::equip(AMateria *m) {
+	if (!m) {
+		outputMessage("No material to equip");
+		return ;
+	}
 	for (int i = 0; i < ARRAY_SIZE; i++) {
 		if (!this->_inventory[i]) {
 			this->_inventory[i] = m;
@@ -82,12 +86,14 @@ void Character::unequip(int idx) {
 	{
 		this->_inventory[idx] = NULL;
 		outputMessage("Material unnequipped");
+		return ;
 	}
+	outputMessage("Nothing there !");
 }
 
 void Character::use(int idx, ICharacter &target) {
 	if ((idx >= 0 || idx < ARRAY_SIZE))
 		this->_inventory[idx]->use(target);
-	// else
-		// outputMessage("Cannot use the void...");
+	else
+		outputMessage("Cannot use the void...");
 }
