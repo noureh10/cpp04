@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:49:45 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/17 20:09:45 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:26:57 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Cat: public Animal {
 		Cat(const Cat &copy);
 		Cat& operator=(const Cat &assign);
 		void makeSound(void) const ;
-		const Brain& getBrain(void) const;
+		Brain& getBrain(void) const;
 		bool isEqual(const Cat& obj);
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:53:57 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/17 16:28:27 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:35:23 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Brain
 {
 	private:
 		std::string ideas[NUMBER_OF_IDEAS];
+		void outputMessage(std::string message);
 	public:
 		Brain();
 		Brain(const Brain &other);

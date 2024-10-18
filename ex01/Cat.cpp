@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:52:12 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/17 20:09:37 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:26:53 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void Cat::makeSound() const {
 	std::cout << CAT_NOISE << std::endl;
 }
 
-const Brain& Cat::getBrain(void) const {
+Brain& Cat::getBrain(void) const {
 	return (*this->brain);
 }
 
