@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:10:45 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/04 15:23:03 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:38:21 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,16 @@ int main(void) {
 	{
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
+		//const Aniaml* k = new Animal();
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
 		i->makeSound();
 		j->makeSound();
+		//k->makeSound();
 
 		delete j;
 		delete i;
+		//delete k;
 	}
 	{
 		const WrongAnimal* meta = new WrongAnimal();
