@@ -15,7 +15,7 @@ NAME = poly
 SRCS = Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp main.cpp
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 OBJ_DIR = objects
-FLAGS = -std=c++98 -Wall -Wextra -Werror -g3 -fsanitize=address
+FLAGS = -std=c++98 -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(OBJS)

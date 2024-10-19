@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "Dog.hpp"
-#include "Animal.hpp"
 
 Dog::Dog(void) {
 	this->setType("Dog");
@@ -23,13 +22,14 @@ Dog::~Dog(void) {
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy) {
-	*this = copy;
+	this->brain = new Brain(*copy.brain);
+	this->_type = copy._type;
 }
 
 Dog& Dog::operator=(const Dog &assign) {
 	if (this != &assign) {
 		this->setType(assign.getType());
-		if (!this->brain)
+		if (this->brain)
 			delete this->brain;
 		this->brain = new Brain(*assign.brain);
 	}

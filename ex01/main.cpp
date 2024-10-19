@@ -46,11 +46,13 @@ int main(void) {
 		delete j;
 	}
 	{
-		Animal *a = new Dog();
-		Animal *b = new Cat();
-
-		delete a;
-		delete b;
+		Cat a;
+		a.getBrain().setIdea("Hello World", 0);
+		{
+			Cat tmp = a;
+			std::cout << tmp.getBrain().getIdea(0) << std::endl;
+		}
+		std::cout << a.getBrain().getIdea(0) << std::endl;
 	}
 	{
 		Dog t1;
@@ -65,5 +67,13 @@ int main(void) {
 			tmp = t2;	
 		}
 		delete t2;
+	}
+	{
+		Cat *a = new Cat();
+		Cat *b = new Cat(*a);
+		delete a;
+		b->getType();
+		b->getBrain();
+		delete b;
 	}
 }
