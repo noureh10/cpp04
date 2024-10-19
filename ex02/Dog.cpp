@@ -23,14 +23,14 @@ Dog::~Dog(void) {
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy) {
-	this->_type = copy._type;
 	this->brain = new Brain(*copy.brain);
+	this->_type = copy._type;
 }
 
 Dog& Dog::operator=(const Dog &assign) {
 	if (this != &assign) {
 		this->setType(assign.getType());
-		if (!this->brain)
+		if (this->brain)
 			delete this->brain;
 		this->brain = new Brain(*assign.brain);
 	}

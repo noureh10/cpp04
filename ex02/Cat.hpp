@@ -29,7 +29,7 @@ class Cat: public Animal {
 		Cat& operator=(const Cat &assign);
 		void makeSound(void) const ;
 		Brain& getBrain(void) const;
-		bool isEqual(const Dog &obj);
+		bool isEqual(const Cat &obj);
 };
 
 #endif

@@ -22,14 +22,14 @@ Cat::~Cat(void) {
 }
 
 Cat::Cat(const Cat &copy) : Animal(copy) {
-	this->_type = copy._type;
 	this->brain = new Brain(*copy.brain);
+	this->_type = copy._type;
 }
 
 Cat& Cat::operator=(const Cat &assign) {
 	if (this != &assign) {
 		this->setType(assign.getType());
-		if (!this->brain)
+		if (this->brain)
 			delete this->brain;
 		this->brain = new Brain(*assign.brain);
 	}
@@ -44,7 +44,4 @@ Brain& Cat::getBrain(void) const {
 	return (*this->brain);
 }
 
-Brain& Cat::getBrain(void) const {
-	return (*this->brain);
-}
 

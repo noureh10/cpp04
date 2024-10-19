@@ -21,32 +21,58 @@ int main(void) {
 	{
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
-		//const Aniaml* k = new Animal();
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
 		i->makeSound();
 		j->makeSound();
-		//k->makeSound();
-
 		delete j;
 		delete i;
-		//delete k;
 	}
 	{
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* i = new WrongCat();
+		const WrongCat* j = new WrongCat();
 		std::cout << i->getType() << " " << std::endl;
 		i->makeSound();
+		j->makeSound();
 		meta->makeSound();
-
+		
 		delete meta;
 		delete i;
+		delete j;
 	}
 	{
-		Animal *a = new Dog();
-		Animal *b = new Cat();
+		Cat a;
+		a.getBrain().setIdea("Hello World", 0);
+		{
+			Cat tmp = a;
+			std::cout << tmp.getBrain().getIdea(0) << std::endl;
+		}
+		std::cout << a.getBrain().getIdea(0) << std::endl;
+	}
+	{
+		Dog t1;
+		{
+			Dog tmp;
+			tmp = t1;
+		}
 
+		Dog *t2 = new Dog(); 
+		{
+			Dog *tmp;
+			tmp = t2;	
+		}
+		delete t2;
+	}
+	{
+		Cat *a = new Cat();
+		Cat *b = new Cat(*a);
 		delete a;
+		b->getType();
+		b->getBrain();
 		delete b;
+	}
+	{
+		// Animal not_allowed;
 	}
 }
