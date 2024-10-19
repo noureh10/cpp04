@@ -29,7 +29,9 @@ Cure& Cure::operator=(const Cure &assign) {
 }
 
 AMateria* Cure::clone() const {
-	return new Cure(*this);
+	std::cout << "Cloning a Cure element" << std::endl;
+	AMateria *value = new Cure(*this);
+	return (value);
 }
 
 void Cure::use(ICharacter &target) {

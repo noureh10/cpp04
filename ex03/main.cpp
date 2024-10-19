@@ -55,6 +55,38 @@ int main()
 		me->unequip(410065408);
 		me->unequip(-200);
 	}
+	{
+				IMateriaSource* src = new MateriaSource();
+		AMateria* tmp;
+		ICharacter* me = new Character("me");
+		//No match found
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		//No Match found either
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		me->unequip(0);
+		me->unequip(1);
+		me->unequip(410065408);
+		me->unequip(-200);
+	}
+	{
+		Character *a = new Character("Bobby");
+		Character *b;
+		
+		
+		std::cout << "Before assignment:" << std::endl;
+		std::cout << "Address of a: " << &a << ", Name of a: " << a->getName() << std::endl;
+
+    	b = a;  // This invokes the assignment operator
+
+		std::cout << "After assignment:" << std::endl;
+		std::cout << "Address of a: " << &a << ", Name of a: " << a->getName() << std::endl;
+		std::cout << "Address of b: " << &b << ", Name of b: " << b->getName() << std::endl;
+		
+		delete a;
+		b->getName();
+	}
 	return 0;
 
 }

@@ -22,13 +22,15 @@ MateriaSource::MateriaSource(void) {
 MateriaSource::MateriaSource(const MateriaSource &copy) {
 	for (int i = 0; i < ARRAY_SIZE; i++) {
 		if (copy._inventory[i])
-			this->_inventory[i] = copy._inventory[i];
+			this->_inventory[i] = copy._inventory[i]->clone();
+		else
+			this->_inventory[i] = NULL;
 	}
 }
 
 MateriaSource::~MateriaSource() {
 	for (int i = 0; i < ARRAY_SIZE; i++) {
-		if (this->_inventory[i])
+		if (this->_inventory[i]) {}
 			delete this->_inventory[i];
 	}
 }
@@ -63,7 +65,7 @@ void MateriaSource::learnMateria(AMateria *material) {
 
 AMateria* MateriaSource::createMateria(const std::string &type) {
 	for (int i = 0; i < ARRAY_SIZE; i++) {
-		if (this->_inventory[i]->getType() == type)
+		if ((this->_inventory[i]) && this->_inventory[i]->getType() == type)
 			return (this->_inventory[i]->clone());
 	}
 	this->outputMessage("No match found");

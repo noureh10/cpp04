@@ -29,7 +29,9 @@ Ice& Ice::operator=(const Ice &assign) {
 }
 
 AMateria* Ice::clone() const {
-	return new Ice(*this);
+	std::cout << "Cloning an Ice element" << std::endl;
+	AMateria *value = new Ice(*this);
+	return (value);
 }
 
 void Ice::use(ICharacter &target) {

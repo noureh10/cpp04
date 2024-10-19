@@ -27,10 +27,15 @@ Character::Character(std::string name) {
 }
 
 Character::Character(const Character &copy) {
-	for (int i = 0; i < ARRAY_SIZE; i++)
-		if (copy._inventory[i])
-			this->_inventory[i] = copy._inventory[i];
-	*this = copy;
+	std::cout << "Character copy construtor called" << std::endl;
+	this->_name = copy._name;
+	for (int i = 0; i < 4; i++) {
+		if (copy._inventory[i]) {
+			this->_inventory[i] = copy._inventory[i]->clone();
+		} else {	
+			this->_inventory[i] = NULL;
+		}
+	}
 }
 
 void Character::deleteInvertory() {
@@ -40,7 +45,7 @@ void Character::deleteInvertory() {
 }
 
 Character::~Character() {
-	this->deleteInvertory();
+	deleteInvertory();
 }
 
 void Character::outputMessage(std::string message) {
@@ -50,14 +55,12 @@ void Character::outputMessage(std::string message) {
 Character& Character::operator=(const Character &assign) {
 	if (this != &assign)
 	{
-		this->_name = assign.getName();
+		for (int i = 0; i < 4; ++i) {
+                delete _inventory[i];
+        }
+		this->_name = assign._name;
 		for (int i = 0; i < ARRAY_SIZE; i++) {
-			if (this->_inventory[i])
-				delete this->_inventory[i];
-			if (assign._inventory[i])
-				this->_inventory[i] = (assign._inventory[i])->clone();
-			else
-				this->_inventory[i] = NULL;
+				this->_inventory[i] = (assign._inventory[i]) ? assign._inventory[i]->clone() : NULL;
 		}
 	}
 	return (*this);
@@ -82,7 +85,7 @@ void Character::equip(AMateria *m) {
 }
 
 void Character::unequip(int idx) {
-	if (idx >= 0 && idx < ARRAY_SIZE)
+	if (idx >= 0 && idx < ARRAY_SIZE && this->_inventory[idx])
 	{
 		this->_inventory[idx] = NULL;
 		outputMessage("Material unnequipped");
@@ -92,7 +95,7 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter &target) {
-	if ((idx >= 0 || idx < ARRAY_SIZE))
+	if ((idx >= 0 || idx < ARRAY_SIZE) && this->_inventory[idx])
 		this->_inventory[idx]->use(target);
 	else
 		outputMessage("Cannot use the void...");
