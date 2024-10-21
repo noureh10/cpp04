@@ -29,8 +29,8 @@ MateriaSource::MateriaSource(const MateriaSource &copy) {
 }
 
 MateriaSource::~MateriaSource() {
-	for (int i = 0; i < ARRAY_SIZE; i++) {
-		if (this->_inventory[i]) {}
+	for (int i = 0; i < 4; i++) {
+		if (this->_inventory[i])
 			delete this->_inventory[i];
 	}
 }
@@ -54,9 +54,12 @@ void MateriaSource::outputMessage(std::string message) {
 }
 
 void MateriaSource::learnMateria(AMateria *material) {
+	if (!material)
+		return ;
 	for (int i = 0; i < ARRAY_SIZE; i++) {
 		if (!this->_inventory[i]) {
 			this->_inventory[i] = material->clone();
+			delete material;
 			return ;			
 		}
 	}

@@ -55,6 +55,7 @@ int main()
 		me->unequip(410065408);
 		me->unequip(-200);
 		delete src;
+		delete tmp;
 		delete me;
 	}
 	{
@@ -78,11 +79,10 @@ int main()
 		Character *a = new Character("Bobby");
 		Character *b = new Character("Eric");
 		
-		
 		std::cout << "Before assignment:" << std::endl;
 		std::cout << "Address of a: " << &a << ", Name of a: " << a->getName() << std::endl;
 
-    	*b = *a;  // This invokes the assignment operator
+    	*b = *a;
 
 		std::cout << "After assignment:" << std::endl;
 		std::cout << "Address of a: " << &a << ", Name of a: " << a->getName() << std::endl;
@@ -90,6 +90,13 @@ int main()
 		
 		delete a;
 		b->getName();
+		delete b;
+	}
+	{
+		Character *a = new Character("Bobby isn't angry");
+		Character *b = new Character(*a);
+		delete a;
+		std::cout << b->getName() << std::endl;
 		delete b;
 	}
 	return 0;

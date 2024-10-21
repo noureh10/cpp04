@@ -17,7 +17,7 @@ Ice::Ice() {
 }
 
 Ice::Ice(const Ice &copy) : AMateria(copy) {
-	*this = copy;
+	this->_type = copy._type;
 }
 
 Ice::~Ice() {}

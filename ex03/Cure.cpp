@@ -17,7 +17,7 @@ Cure::Cure() {
 }
 
 Cure::Cure(const Cure &copy) : AMateria(copy) {
-	*this = copy;
+	this->_type = copy._type;
 }
 
 Cure::~Cure() {}
