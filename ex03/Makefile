@@ -6,7 +6,7 @@
 #    By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/03 18:10:38 by nechaara          #+#    #+#              #
-#    Updated: 2024/10/16 18:55:19 by nechaara         ###   ########.fr        #
+#    Updated: 2024/10/21 19:16:12 by nechaara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = poly
 SRCS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 OBJ_DIR = objects
-FLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address -g3
+FLAGS = -std=c++98 -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 18:59:27 by nechaara          #+#    #+#             */
-/*   Updated: 2024/10/18 19:08:29 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/10/21 18:59:07 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,11 @@ int main()
 		me->unequip(1);
 		me->unequip(410065408);
 		me->unequip(-200);
+		delete src;
+		delete me;
 	}
 	{
-				IMateriaSource* src = new MateriaSource();
+		IMateriaSource* src = new MateriaSource();
 		AMateria* tmp;
 		ICharacter* me = new Character("me");
 		//No match found
@@ -69,16 +71,18 @@ int main()
 		me->unequip(1);
 		me->unequip(410065408);
 		me->unequip(-200);
+		delete src;
+		delete me;
 	}
 	{
 		Character *a = new Character("Bobby");
-		Character *b;
+		Character *b = new Character("Eric");
 		
 		
 		std::cout << "Before assignment:" << std::endl;
 		std::cout << "Address of a: " << &a << ", Name of a: " << a->getName() << std::endl;
 
-    	b = a;  // This invokes the assignment operator
+    	*b = *a;  // This invokes the assignment operator
 
 		std::cout << "After assignment:" << std::endl;
 		std::cout << "Address of a: " << &a << ", Name of a: " << a->getName() << std::endl;
@@ -86,6 +90,7 @@ int main()
 		
 		delete a;
 		b->getName();
+		delete b;
 	}
 	return 0;
 
